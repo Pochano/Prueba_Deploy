@@ -1,5 +1,2 @@
-Flask 
-flask-mysqldb
-bcrypt
-MarkupSafe
-gunicorn
+Flask==2.3.2
+bcrypt==4.0.1
