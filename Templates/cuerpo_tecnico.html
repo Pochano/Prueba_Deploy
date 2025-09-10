@@ -1,0 +1,132 @@
+
+{% extends 'Cuerpo_Tecnico_Layout.html' %}
+
+{% block body %}
+
+<body>
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <span>ES</span>
+            <div class="top-bar-links">
+                <a href="http://127.0.0.1:3002/Logout">LOGOUT</a>
+            </div>
+        </div>
+    </div>
+    
+    <header class="header">
+        <nav class="nav">
+            <a href="http://127.0.0.1:3002/">
+                <img src="../../../static/imagenes/escudos/ESCUDO.png" alt="Logo pequeño" class="small-logo">
+            </a>
+            <div class="logo">
+                <a href="http://127.0.0.1:3002/">FC BARCELONA</a>
+            </div>
+            <div class="nav-links">
+                <a href="http://127.0.0.1:3002/Deportes">Deportes</a>
+                <a href="http://127.0.0.1:3002/Instalaciones">Instalaciones</a>
+                <a href="http://127.0.0.1:3002/Noticias">Noticias</a>
+                <a href="http://127.0.0.1:3002/Directiva">Directiva</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="nav-bar">
+        <a href="http://127.0.0.1:3002/Descripcion?id={{deporte_id_n}}" >Descripción</a>
+        <a href="http://127.0.0.1:3002/Primer_Equipo?id={{deporte_id_n}}">Primer Equipo</a>
+        <a href="http://127.0.0.1:3002/Cuerpo_Tecnico?id={{deporte_id_n}}" class="active">Cuerpo Técnico</a>
+        <a href="http://127.0.0.1:3002/Torneos?id={{deporte_id_n}}">Torneos</a>
+        <a href="http://127.0.0.1:3002/Patrocinadores?id={{deporte_id_n}}">Patrocinadores</a>
+    </div>
+    
+    <main>
+        <section class="players-section">
+            <h1 class="titulo-primer-equipo">FC Barcelona - Cuerpo Técnico</h1> <br> <br>
+
+            <div class="players-container">
+
+
+            <h3 id="cuerpo-tecnico" class="cuerpo-tecnico">CUERPO TECNICO</h3>
+            <div class="players-grid">
+                <div class="player-card">
+                    <img src="../static/imagenes/staff_tecnico/{{Director_R[0][4]}}" alt="ENTRENADOR">
+                    <div class="player-info">
+                        <h2>{{Director_R[0][0]}} {{Director_R[0][1]}}</h2>
+                        <p>ENTRENADOR</p>
+                    </div>
+                    <div class="player-hover-info">
+                            <strong>{{Director_R[0][0]}} {{Director_R[0][1]}}</strong>
+                            <br>
+                            <p>Años de Experiencia: {{Director_R[0][3]}}</p>
+                        </div>
+                </div>
+
+
+                {%for entrenadores in Entrenadores_R %}
+
+                <div class="player-card">
+                    <img src="../static/imagenes/staff_tecnico/{{entrenadores[5]}}" alt="ENTRENADOR">
+                    <div class="player-info">
+                        <h2>{{entrenadores[0]}} {{entrenadores[1]}}</h2>
+                        <p>ENTRENADOR</p>
+                    </div>
+                    <div class="player-hover-info">
+                            <strong>{{entrenadores[0]}} {{entrenadores[1]}} {{entrenadores[2]}}</strong>
+                            <br>
+                            <p>Años de Experiencia: {{entrenadores[3]}}</p>
+                            <p>Especialización: {{entrenadores[4]}}</p>
+                        </div>
+                </div>
+
+                {%endfor%}
+
+
+                {%for medicos in Medicos_R %}
+
+                <div class="player-card">
+                    <img src="../static/imagenes/staff_tecnico/{{medicos[4]}}" alt="ENTRENADOR">
+                    <div class="player-info">
+                        <h2>{{medicos[0]}} {{medicos[1]}}</h2>
+                        <p>MEDICO</p>
+                    </div>
+                    <div class="player-hover-info">
+                            <strong>{{medicos[0]}} {{medicos[1]}} {{medicos[2]}}</strong>
+                            <br>
+                            <p>Especialización: {{medicos[3]}}</p>
+                        </div>
+                </div>
+
+                {%endfor%}
+
+            </div>
+                
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <a href="https://www.nike.com" target="_blank">
+                    <img src="../../../static/imagenes/patrocinadores/NIKE.png" alt="Logo Nike" class="small-logo4">
+                </a>
+            </div>
+            <div class="footer-section">
+                <a href="https://www.spotify.com" target="_blank">
+                    <img src="../../../static/imagenes/patrocinadores/SPOTIFY.png" alt="Logo Spotify" class="small-logo5">
+                </a>
+            </div>
+            <div class="footer-section">
+                <a href="https://www.ambilight.com" target="_blank">
+                    <img src="../../../static/imagenes/patrocinadores/AMBILIGHT.png" alt="Logo Ambilight" class="small-logo6">
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Club Deportivo. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+{% endblock %}

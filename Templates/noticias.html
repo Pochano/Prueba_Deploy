@@ -1,0 +1,383 @@
+
+{% extends 'Noticias_Layout.html' %}
+
+{% block body %}
+
+<body>
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <span>ES</span>
+            <div class="top-bar-links">
+                <a href="http://127.0.0.1:3002/Logout">LOGOUT</a>
+            </div>
+        </div>
+    </div>
+
+    <header class="header">
+        <nav class="nav">
+            <a href="http://127.0.0.1:3002/">
+                <img src="../../../static/imagenes/escudos/ESCUDO.png" alt="Logo pequeño" class="small-logo">
+            </a>
+            <div class="logo">
+                <a href="http://127.0.0.1:3002/">FC BARCELONA</a>
+            </div>
+            <div class="nav-links">
+                <a href="http://127.0.0.1:3002/Deportes">Deportes</a>
+                <a href="http://127.0.0.1:3002/Instalaciones">Instalaciones</a>
+                <a href="http://127.0.0.1:3002/Noticias">Noticias</a>
+                <a href="http://127.0.0.1:3002/Directiva">Directiva</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="categories">
+        <button onclick="location.href='#futbol-masculino'">Fútbol Masculino</button>
+        <button onclick="location.href='#futbol-femenino'">Fútbol Femenino</button>
+        <button onclick="location.href='#basket-masculino'">Basket Masculino</button>
+        <button onclick="location.href='#basket-femenino'">Basket Femenino</button>
+        <button onclick="location.href='#futbol-sala'">Fútbol Sala</button>
+        <button onclick="location.href='#balonmano'">Balonmano</button> 
+        <button onclick="location.href='#hockey-patines'">Hockey Patines</button>
+    </div>
+
+    <h5 id="futbol-masculino"> <br> Fútbol-Masculino </h5>
+    <div class="news-container">
+
+        <div class="column column-1">
+            {% for Futbol_Masculino in Futbol_Masculino_R %}
+                {% if loop.index0 % 2 == 0 %} <!-- Índices pares -->
+                <div class="news-card">
+                    <img src="static/imagenes/noticias/{{ Futbol_Masculino[4] }}" alt="Noticia 1">
+                    <h3>{{ Futbol_Masculino[0] }}</h3>
+                    <p>
+                        {{ Futbol_Masculino[1] }} <br>
+                        {{ Futbol_Masculino[2] }}
+                    </p>
+                    <div class="news-footer">
+                        <span class="sport">{{ Futbol_Masculino[5] }}</span>
+                        <span class="date">{{ Futbol_Masculino[3] }}</span>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        
+        <div class="column column-2">
+            {% for Futbol_Masculino in Futbol_Masculino_R %}
+                {% if loop.index0 % 2 != 0 %} <!-- Índices impares -->
+                <div class="news-card">
+                    <img src="static/imagenes/noticias/{{ Futbol_Masculino[4] }}" alt="Noticia 1">
+                    <h3>{{ Futbol_Masculino[0] }}</h3>
+                    <p>
+                        {{ Futbol_Masculino[1] }} <br>
+                        {{ Futbol_Masculino[2] }}
+                    </p>
+                    <div class="news-footer">
+                        <span class="sport">{{ Futbol_Masculino[5] }}</span>
+                        <span class="date">{{ Futbol_Masculino[3] }}</span>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        
+    </div>
+
+    <h5 id="futbol-femenino">Fútbol-Femenino </h5>
+    <div class="news-container">
+        
+        <div class="column column-1">
+            {% for Futbol_Masculino in Futol_Femenino_R %}
+                {% if loop.index0 % 2 == 0 %} <!-- Índices pares -->
+                <div class="news-card">
+                    <img src="static/imagenes/noticias/{{ Futbol_Masculino[4] }}" alt="Noticia 1">
+                    <h3>{{ Futbol_Masculino[0] }}</h3>
+                    <p>
+                        {{ Futbol_Masculino[1] }} <br>
+                        {{ Futbol_Masculino[2] }}
+                    </p>
+                    <div class="news-footer">
+                        <span class="sport">{{ Futbol_Masculino[5] }}</span>
+                        <span class="date">{{ Futbol_Masculino[3] }}</span>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        
+        <div class="column column-2">
+            {% for Futbol_Masculino in Futol_Femenino_R %}
+                {% if loop.index0 % 2 != 0 %} <!-- Índices impares -->
+                <div class="news-card">
+                    <img src="static/imagenes/noticias/{{ Futbol_Masculino[4] }}" alt="Noticia 1">
+                    <h3>{{ Futbol_Masculino[0] }}</h3>
+                    <p>
+                        {{ Futbol_Masculino[1] }} <br>
+                        {{ Futbol_Masculino[2] }}
+                    </p>
+                    <div class="news-footer">
+                        <span class="sport">{{ Futbol_Masculino[5] }}</span>
+                        <span class="date">{{ Futbol_Masculino[3] }}</span>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+    </div>
+
+    <h5 id="basket-masculino">basket-masculino </h5>
+    <div class="news-container">
+        
+        <div class="column column-1">
+            {% for Futbol_Masculino in Basquet_Masculino_R %}
+                {% if loop.index0 % 2 == 0 %} <!-- Índices pares -->
+                <div class="news-card">
+                    <img src="static/imagenes/noticias/{{ Futbol_Masculino[4] }}" alt="Noticia 1">
+                    <h3>{{ Futbol_Masculino[0] }}</h3>
+                    <p>
+                        {{ Futbol_Masculino[1] }} <br>
+                        {{ Futbol_Masculino[2] }}
+                    </p>
+                    <div class="news-footer">
+                        <span class="sport">{{ Futbol_Masculino[5] }}</span>
+                        <span class="date">{{ Futbol_Masculino[3] }}</span>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        
+        <div class="column column-2">
+            {% for Futbol_Masculino in Basquet_Masculino_R %}
+                {% if loop.index0 % 2 != 0 %} <!-- Índices impares -->
+                <div class="news-card">
+                    <img src="static/imagenes/noticias/{{ Futbol_Masculino[4] }}" alt="Noticia 1">
+                    <h3>{{ Futbol_Masculino[0] }}</h3>
+                    <p>
+                        {{ Futbol_Masculino[1] }} <br>
+                        {{ Futbol_Masculino[2] }}
+                    </p>
+                    <div class="news-footer">
+                        <span class="sport">{{ Futbol_Masculino[5] }}</span>
+                        <span class="date">{{ Futbol_Masculino[3] }}</span>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        
+    </div>
+
+    <h5 id="basket-femenino">Basket-Femenino </h5>
+    <div class="news-container">
+
+
+        <div class="column column-1">
+            {% for Futbol_Masculino in Basquet_Femenino_R %}
+                {% if loop.index0 % 2 == 0 %} <!-- Índices pares -->
+                <div class="news-card">
+                    <img src="static/imagenes/noticias/{{ Futbol_Masculino[4] }}" alt="Noticia 1">
+                    <h3>{{ Futbol_Masculino[0] }}</h3>
+                    <p>
+                        {{ Futbol_Masculino[1] }} <br>
+                        {{ Futbol_Masculino[2] }}
+                    </p>
+                    <div class="news-footer">
+                        <span class="sport">{{ Futbol_Masculino[5] }}</span>
+                        <span class="date">{{ Futbol_Masculino[3] }}</span>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        
+        <div class="column column-2">
+            {% for Futbol_Masculino in Basquet_Femenino_R %}
+                {% if loop.index0 % 2 != 0 %} <!-- Índices impares -->
+                <div class="news-card">
+                    <img src="static/imagenes/noticias/{{ Futbol_Masculino[4] }}" alt="Noticia 1">
+                    <h3>{{ Futbol_Masculino[0] }}</h3>
+                    <p>
+                        {{ Futbol_Masculino[1] }} <br>
+                        {{ Futbol_Masculino[2] }}
+                    </p>
+                    <div class="news-footer">
+                        <span class="sport">{{ Futbol_Masculino[5] }}</span>
+                        <span class="date">{{ Futbol_Masculino[3] }}</span>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        
+    </div>
+
+    <h5 id="futbol-sala">Fútbol sala </h5>
+    <div class="news-container">
+    
+        <div class="column column-1">
+            {% for Futbol_Masculino in Futol_Sala_R %}
+                {% if loop.index0 % 2 == 0 %} <!-- Índices pares -->
+                <div class="news-card">
+                    <img src="static/imagenes/noticias/{{ Futbol_Masculino[4] }}" alt="Noticia 1">
+                    <h3>{{ Futbol_Masculino[0] }}</h3>
+                    <p>
+                        {{ Futbol_Masculino[1] }} <br>
+                        {{ Futbol_Masculino[2] }}
+                    </p>
+                    <div class="news-footer">
+                        <span class="sport">{{ Futbol_Masculino[5] }}</span>
+                        <span class="date">{{ Futbol_Masculino[3] }}</span>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        
+        <div class="column column-2">
+            {% for Futbol_Masculino in Futol_Sala_R %}
+                {% if loop.index0 % 2 != 0 %} <!-- Índices impares -->
+                <div class="news-card">
+                    <img src="static/imagenes/noticias/{{ Futbol_Masculino[4] }}" alt="Noticia 1">
+                    <h3>{{ Futbol_Masculino[0] }}</h3>
+                    <p>
+                        {{ Futbol_Masculino[1] }} <br>
+                        {{ Futbol_Masculino[2] }}
+                    </p>
+                    <div class="news-footer">
+                        <span class="sport">{{ Futbol_Masculino[5] }}</span>
+                        <span class="date">{{ Futbol_Masculino[3] }}</span>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+    </div>
+
+    <h5 id="balonmano">Balonmano </h5>
+    <div class="news-container">
+        
+        <div class="column column-1">
+            {% for Futbol_Masculino in Balonmano_R %}
+                {% if loop.index0 % 2 == 0 %} <!-- Índices pares -->
+                <div class="news-card">
+                    <img src="static/imagenes/noticias/{{ Futbol_Masculino[4] }}" alt="Noticia 1">
+                    <h3>{{ Futbol_Masculino[0] }}</h3>
+                    <p>
+                        {{ Futbol_Masculino[1] }} <br>
+                        {{ Futbol_Masculino[2] }}
+                    </p>
+                    <div class="news-footer">
+                        <span class="sport">{{ Futbol_Masculino[5] }}</span>
+                        <span class="date">{{ Futbol_Masculino[3] }}</span>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        
+        <div class="column column-2">
+            {% for Futbol_Masculino in Balonmano_R %}
+                {% if loop.index0 % 2 != 0 %} <!-- Índices impares -->
+                <div class="news-card">
+                    <img src="static/imagenes/noticias/{{ Futbol_Masculino[4] }}" alt="Noticia 1">
+                    <h3>{{ Futbol_Masculino[0] }}</h3>
+                    <p>
+                        {{ Futbol_Masculino[1] }} <br>
+                        {{ Futbol_Masculino[2] }}
+                    </p>
+                    <div class="news-footer">
+                        <span class="sport">{{ Futbol_Masculino[5] }}</span>
+                        <span class="date">{{ Futbol_Masculino[3] }}</span>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+    </div>
+
+    <h5 id="hockey-patines">Hockey y Patines </h5>
+    <div class="news-container">
+    
+        <div class="column column-1">
+            {% for Futbol_Masculino in Hockey_Patines_R %}
+                {% if loop.index0 % 2 == 0 %} <!-- Índices pares -->
+                <div class="news-card">
+                    <img src="static/imagenes/noticias/{{ Futbol_Masculino[4] }}" alt="Noticia 1">
+                    <h3>{{ Futbol_Masculino[0] }}</h3>
+                    <p>
+                        {{ Futbol_Masculino[1] }} <br>
+                        {{ Futbol_Masculino[2] }}
+                    </p>
+                    <div class="news-footer">
+                        <span class="sport">{{ Futbol_Masculino[5] }}</span>
+                        <span class="date">{{ Futbol_Masculino[3] }}</span>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        
+        <div class="column column-2">
+            {% for Futbol_Masculino in Hockey_Patines_R %}
+                {% if loop.index0 % 2 != 0 %} <!-- Índices impares -->
+                <div class="news-card">
+                    <img src="static/imagenes/noticias/{{ Futbol_Masculino[4] }}" alt="Noticia 1">
+                    <h3>{{ Futbol_Masculino[0] }}</h3>
+                    <p>
+                        {{ Futbol_Masculino[1] }} <br>
+                        {{ Futbol_Masculino[2] }}
+                    </p>
+                    <div class="news-footer">
+                        <span class="sport">{{ Futbol_Masculino[5] }}</span>
+                        <span class="date">{{ Futbol_Masculino[3] }}</span>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+    </div>
+
+    <!-- Mantener el pie de página existente -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <a href="https://www.nike.com" target="_blank">
+                    <img src="static/imagenes/patrocinadores/NIKE.png" alt="Logo Nike" class="small-logo4">
+                </a>
+            </div>
+            <div class="footer-section">
+                <a href="https://www.spotify.com" target="_blank">
+                    <img src="static/imagenes/patrocinadores/SPOTIFY.png" alt="Logo Spotify" class="small-logo5">
+                </a>
+            </div>
+            <div class="footer-section">
+                <a href="https://www.ambilight.com" target="_blank">
+                    <img src="static/imagenes/patrocinadores/AMBILIGHT.png" alt="Logo Ambilight" class="small-logo6">
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Club Deportivo. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+
+    <script>
+        function scrollToSection(id) {
+            const section = document.getElementById(id);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+{% endblock %}

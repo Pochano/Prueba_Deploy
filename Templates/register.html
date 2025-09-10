@@ -1,0 +1,83 @@
+
+{% extends 'Registro_Layout.html' %}
+
+{% block body %}
+
+
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <span>ES</span>
+            <div class="top-bar-links">
+                <a href="http://127.0.0.1:3002/Login">LOGIN</a>
+                <a href="http://127.0.0.1:3002/Register">REGISTER</a>
+            </div>
+        </div>
+    </div>
+
+    <header class="header">
+        <nav class="nav">
+            <a href="http://127.0.0.1:3002/">
+                <img src="static/imagenes/escudos/ESCUDO.png" alt="Logo pequeño" class="small-logo">
+            </a>
+            <div class="logo">
+                <a href="http://127.0.0.1:3002/">
+                FC BARCELONA
+                </a>
+            </div>
+
+            <div class="nav-links">
+                <a href="http://127.0.0.1:3002/Deportes">Deportes</a>
+                <a href="http://127.0.0.1:3002/Instalaciones">Instalaciones</a>
+                <a href="http://127.0.0.1:3002/Noticias">Noticias</a>
+                <a href="http://127.0.0.1:3002/Directiva">Directiva</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Cuadro blanco para el formulario de registro -->
+    <div class="Registro">
+        <form action="/Verificacion_Registro" method="POST">
+            <h1>Registro</h1>
+            
+            <span>Nombre de Usuario:</span><br>
+            <input type="text" name="Usuario" placeholder="Nombre de Usuario" required><br>
+            <span>Contraseña:</span><br>
+            <input type="password" name="Contraseña" placeholder="Ingrese una Contraseña Segura" required><br>
+            <span>Correo Electrónico:</span><br>
+            <input type="email" name="Correo" placeholder="example@gmail.com" required><br>
+            <span>Dirección:</span><br>
+            <input type="text" name="Direccion" placeholder="Ej. Urbanizacion X, Distrito Y" required><br><br><br>
+
+            <button type="submit">
+                Registrarse
+            </button>
+        </form>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <a href="https://www.nike.com" target="_blank">
+                    <img src="static/imagenes/patrocinadores/NIKE.png" alt="Logo Nike" class="small-logo4">
+                </a>
+            </div>
+            <div class="footer-section">
+                <a href="https://www.spotify.com" target="_blank">
+                    <img src="static/imagenes/patrocinadores/SPOTIFY.png" alt="Logo Spotify" class="small-logo5">
+                </a>
+            </div>
+            <div class="footer-section">
+                <a href="https://www.ambilight.com" target="_blank">
+                    <img src="static/imagenes/patrocinadores/AMBILIGHT.png" alt="Logo Ambilight" class="small-logo6">
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Club Deportivo. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,111 @@
+
+{% extends 'Directiva_Layout.html' %}
+
+{% block body %}
+
+<body>
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <span>ES</span>
+            <div class="top-bar-links">
+                <a href="http://127.0.0.1:3002/Logout">LOGOUT</a>
+            </div>
+        </div>
+    </div>
+    
+    <header class="header">
+        <nav class="nav">
+            <img src="static/imagenes/escudos/ESCUDO.png" alt="Logo pequeño" class="small-logo">
+            
+            <div class="logo">  
+                <a href="http://127.0.0.1:3002">FC BARCELONA</a>
+            </div>
+
+            <div class="nav-links">
+                <a href="http://127.0.0.1:3002/Deportes">Deportes</a>
+                <a href="http://127.0.0.1:3002/Instalaciones">Instalaciones</a>
+                <a href="http://127.0.0.1:3002/Noticias">Noticias</a>
+                <a href="http://127.0.0.1:3002/Directiva">Directiva</a>
+            </div>
+
+        </nav>
+    </header>
+
+    <main>
+        <section class="players-section">
+            <h1>Organización</h1>
+            <div class="players-container">
+                <h2>Junta Directiva</h2>
+                <div class="junta-image-container">
+                    <img src="static/imagenes/directiva/todos.png" alt="Junta Directiva" class="junta-image">
+                </div>
+                <div class="players-grid">
+
+                    
+
+                    <div class="player-card">
+                        <img src="static/imagenes/directiva/{{Presidente_R[2]}}" alt="junta">
+                        <div class="player-info">
+                            <h3>{{Presidente_R[0]}}</h3>
+                            <p>Presidente</p>
+                        </div>
+                        <div class="additional-info">
+                            <strong>{{Presidente_R[0]}}</strong>
+                            <br>
+                            <p>Presidente</p>
+                            <p>Fecha de Nacimiento: {{Presidente_R[1]}}</p>
+                            <p>Edad: {{Presidente_R[3]}} años</p>
+                        </div>
+
+                    </div>
+
+                    {%for miembro in Miembros_R %}
+
+                    <div class="player-card">
+                        <img src="static/imagenes/directiva/{{miembro[3]}}" alt="junta">
+                        <div class="player-info">
+                            <h3>{{miembro[0]}}</h3>
+                            <p>{{miembro[2]}}</p>
+                        </div>
+                        <div class="additional-info">
+                            <strong>{{miembro[0]}}</strong>
+                            <br>
+                            <p>{{miembro[2]}}</p>
+                            <p>Fecha de Nacimiento: {{miembro[1]}}</p>
+                            <p>Edad: {{miembro[4]}} años</p>
+                        </div>
+                    </div>
+
+                    {%endfor%}
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <a href="https://www.nike.com" target="_blank">
+                    <img src="static/imagenes/patrocinadores/NIKE.png" alt="Logo Nike" class="small-logo4">
+                </a>
+            </div>
+            <div class="footer-section">
+                <a href="https://www.spotify.com" target="_blank">
+                    <img src="static/imagenes/patrocinadores/SPOTIFY.png" alt="Logo Spotify" class="small-logo5">
+                </a>
+            </div>
+            <div class="footer-section">
+                <a href="https://www.ambilight.com" target="_blank">
+                    <img src="static/imagenes/patrocinadores/AMBILIGHT.png" alt="Logo Ambilight" class="small-logo6">
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Club Deportivo. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+{% endblock %}

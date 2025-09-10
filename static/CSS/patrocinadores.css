@@ -1,0 +1,300 @@
+/* Variables de color */
+:root {
+    --primary-blue: #0B0A33;
+    --primary-red: #A50044;
+    --secondary-blue: #020038;
+    --gold: #EDBB00;
+    --white: #ffffff;
+}
+
+@font-face {
+    font-family: 'Bebas Neue';
+    src: url('../../../static/CSS/BebasNeue-Regular.ttf') format('truetype');
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Bebas Neue';
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background: linear-gradient(
+        to bottom,
+        var(--primary-red) 40%,
+        var(--primary-blue) 55%,
+        var(--primary-blue) 100%
+    );
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding-bottom: 60px; /* Añade un margen inferior para que no cubra el contenido */
+}
+
+/* Top Bar */
+.top-bar {
+    background-color: var(--secondary-blue);
+    color: var(--gold);
+    padding: 0.5rem 0;
+    font-size: 1.5rem;
+}
+
+.top-bar-content {
+    max-width: 2000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+}
+
+.top-bar-links a {
+    color: var(--gold);
+    text-decoration: none;
+    margin-left: 1rem;
+}
+
+
+/* Main Header */
+.header {
+    background-color: #1E1C3C;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Navigation */
+.nav-bar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-bar a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+}
+
+.nav-bar a.active {
+    color: #4e1a67;  /* Color morado */
+    border-bottom: 2px solid #4e1a67;  /* Línea debajo para resaltar */
+}
+
+.logo a {
+    color: white; /* Establece el color blanco */
+    text-decoration: none; /* Elimina el subrayado */
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.logo a:hover {
+    color: var(--gold);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.small-logo {
+    width: 70px;
+    height: auto;
+    margin-right: 1px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    margin-left: auto;
+}
+
+.nav-links a {
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 25px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--white);
+}
+
+
+/* Footer */
+
+.footer {
+    background-color: var(--secondary-blue);
+    color: var(--white);
+    padding: 4rem 0 2rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    background-color: #020038;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.footer-section h4 {
+    color: var(--gold);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.footer-bottom {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.footer-links li {
+    display: inline;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+.small-logo4 {
+    width: 200px;
+    height: auto;
+}
+
+.small-logo5 {
+    width: 300px;
+    height: auto;
+}
+
+.small-logo6 {
+    width: 300px;
+    height: auto;
+    margin-top: 20px;
+}
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* Barra de navegación secundaria */
+.nav-bar {
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    padding: 15px 0;
+    border-bottom: 1px solid #ccc;
+
+}
+
+.nav-bar a {
+    color: #0c1e43;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    margin: 0 10px;
+    font-size: 20px; /* Ajusta el tamaño de letra aquí */
+}
+
+
+.nav-bar a.active {
+    color: #4e1a67;
+    border-bottom: 2px solid #4e1a67;
+}
+
+.nav-bar a:hover {
+    color: #4e1a67;
+    border-bottom: 2px solid #4e1a67;
+}
+
+/* Cuadro de contenido central */
+.main-content {
+    width: 1200px; /* Ancho fijo en píxeles */
+    max-width: 90%; /* Para que sea algo responsivo en pantallas pequeñas */
+    margin: 2rem auto;
+    background-color: #fff;
+    padding: 2rem;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: left;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Divide el contenido en dos columnas */
+    gap: 1.5rem; /* Espacio entre las columnas */
+}
+
+.main-content h1 {
+    color: #4e1a67;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.grid-item h2 {
+    color: #0c1e43;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.grid-item p {
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* En pantallas pequeñas, usa una sola columna */
+    }
+}
+
+.P1 {
+    width: 200px;
+    height: auto;
+    display: block;  /* Hace que la imagen sea un bloque */
+    margin-left: auto;  /* Automáticamente ajusta el margen izquierdo */
+    margin-right: auto;
+}

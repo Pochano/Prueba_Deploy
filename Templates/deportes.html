@@ -1,0 +1,85 @@
+
+{% extends 'Deportes_Layout.html' %}
+
+{% block body %}
+
+<body>
+
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <span>ES</span>
+            <div class="top-bar-links">
+                <a href="http://127.0.0.1:3002/Logout">LOGOUT</a>
+            </div>
+        </div>
+    </div>
+
+    <header class="header">
+        <nav class="nav">
+            <a href="http://127.0.0.1:3002/">
+                <img src="static/imagenes/escudos/ESCUDO.png" alt="Logo pequeño" class="small-logo">
+            </a>
+            <div class="logo">
+                <a href="http://127.0.0.1:3002/">
+                FC BARCELONA
+                </a>
+            </div>
+
+            <div class="nav-links">
+                <a href="http://127.0.0.1:3002/Deportes">Deportes</a>
+                <a href="http://127.0.0.1:3002/Instalaciones">Instalaciones</a>
+                <a href="http://127.0.0.1:3002/Noticias">Noticias</a>
+                <a href="http://127.0.0.1:3002/Directiva">Directiva</a>
+            </div>
+
+        </nav>
+    </header>
+
+    <!-- Sección de Instalaciones -->
+    <section class="instalaciones">
+        <h2>Nuestros Deportes</h2>
+        <div class="grid">
+
+            {%for Deporte in Deportes_R %}
+
+            <div class="card">
+                <a href="http://127.0.0.1:3002/Descripcion?id={{Deporte[1]}}">
+                <img src="static/imagenes/deportes/{{Deporte[3]}}" alt="Camp Nou">
+                <h3>{{Deporte[0]}}</h3>
+                <p>{{Deporte[2]}}</p>
+                <p>{{Deporte[4]}}</p>
+                </a>
+            </div>
+
+            {%endfor%}
+
+        </div>
+    </section>
+
+    <!-- Pie de Página -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <a href="https://www.nike.com" target="_blank">
+                    <img src="static/imagenes/patrocinadores/NIKE.png" alt="Logo Nike" class="small-logo4">
+                </a>
+            </div>
+            <div class="footer-section">
+                <a href="https://www.spotify.com" target="_blank">
+                    <img src="static/imagenes/patrocinadores/SPOTIFY.png" alt="Logo Spotify" class="small-logo5">
+                </a>
+            </div>
+            <div class="footer-section">
+                <a href="https://www.ambilight.com" target="_blank">
+                    <img src="static/imagenes/patrocinadores/AMBILIGHT.png" alt="Logo Ambilight" class="small-logo6">
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Club Deportivo. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+
+{% endblock %}
