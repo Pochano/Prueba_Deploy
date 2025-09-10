@@ -1,4 +1,3 @@
-
 {% extends 'Index_Layout.html' %}
 
 {% block body %}
@@ -11,15 +10,14 @@
 
             {% if cookie_activa_R == False %}
 
-                <a href="http://127.0.0.1:3002/Login">LOGIN</a>
-                <a href="http://127.0.0.1:3002/Register">REGISTER</a>
+                <a href="{{ url_for('Login') }}">LOGIN</a>
+                <a href="{{ url_for('Register') }}">REGISTER</a>
 
-            {%else%}
+            {% else %}
 
-                <a href="http://127.0.0.1:3002/Logout">LOGOUT</a>
+                <a href="{{ url_for('Logout') }}">LOGOUT</a>
 
-            {%endif%}
-
+            {% endif %}
 
             </div>
         </div>
@@ -27,25 +25,23 @@
 
     <header class="header">
         <nav class="nav">
-            <img src="static/imagenes/escudos/ESCUDO.png" alt="Logo pequeño" class="small-logo">
+            <img src="{{ url_for('static', filename='imagenes/escudos/ESCUDO.png') }}" alt="Logo pequeño" class="small-logo">
             <div class="logo">
-                
                 FC BARCELONA
             </div>
             <div class="nav-links">
-                <a href="http://127.0.0.1:3002/Deportes">Deportes</a>
-                <a href="http://127.0.0.1:3002/Instalaciones">Instalaciones</a>
-                <a href="http://127.0.0.1:3002/Noticias">Noticias</a>
-                <a href="http://127.0.0.1:3002/Directiva">Directiva</a>
+                <a href="{{ url_for('Deportes') }}">Deportes</a>
+                <a href="{{ url_for('Instalaciones') }}">Instalaciones</a>
+                <a href="{{ url_for('Noticias') }}">Noticias</a>
+                <a href="{{ url_for('Directiva') }}">Directiva</a>
             </div>
-
         </nav>
     </header>
     
     <main>
         <section class="hero-slider">
             <div class="hero-slide">
-                <img src="static/imagenes/fondos/real_sociedad.webp" alt="Partido destacado" class="hero-img">
+                <img src="{{ url_for('static', filename='imagenes/fondos/real_sociedad.webp') }}" alt="Partido destacado" class="hero-img">
                 <div class="hero-content">
                     <h1>Derrota dolorosa en San Sebastián</h1>
                     <p>El equipo es frenado por la Real Sociedad (1-0)</p>
@@ -57,18 +53,18 @@
             <h2 class="section-title">Últimas Noticias</h2>
             <div class="news-grid">
 
-                {%for Noticia in Ultimas_Noticias_R %}
+                {% for Noticia in Ultimas_Noticias_R %}
 
                 <article class="news-card">
-                    <a href="http://127.0.0.1:3002/Noticias">
-                    <img src="static/imagenes/noticias/{{Noticia[3]}}" alt="Noticia 1" class="news-img"></a>
+                    <a href="{{ url_for('Noticias') }}">
+                    <img src="{{ url_for('static', filename='imagenes/noticias/' + Noticia[3]) }}" alt="Noticia" class="news-img"></a>
                     <div class="news-content">
-                        <h3>{{Noticia[0]}}</h3>
-                        <p>{{Noticia[1]}}</p>
+                        <h3>{{ Noticia[0] }}</h3>
+                        <p>{{ Noticia[1] }}</p>
                     </div>
                 </article>
 
-                {%endfor%}
+                {% endfor %}
   
             </div>
         </section>
@@ -78,39 +74,33 @@
                 <h2 class="section-title">Próximo Partido Primer Equipo</h2>
                 <div class="match-card">
 
+                    {% for Proximo_Partido in Proximo_Partido_R %}
                     <div class="team">
                         <div class="team-logo"></div>
                         <span>Local</span>
-
-                        {%for Proximo_Partido in Proximo_Partido_R %}
-
                         {% if Proximo_Partido[2] == 'FC Barcelona' %}
                         <img src="{{ url_for('static', filename='imagenes/escudos/BARCELONA.png') }}" alt="Logo pequeño" class="small-logo2">
                         {% else %}
                         <img src="{{ url_for('static', filename='imagenes/escudos/' + Proximo_Partido[5]) }}" alt="Logo pequeño" class="small-logo2">
                         {% endif %}
-                        
+                    </div>
 
-                    </div>
                     <div class="match-info">
-                        <div>{{Proximo_Partido[0]}} - {{Proximo_Partido[1]}}</div>
-                        <div>{{Proximo_Partido[6]}}</div>
+                        <div>{{ Proximo_Partido[0] }} - {{ Proximo_Partido[1] }}</div>
+                        <div>{{ Proximo_Partido[6] }}</div>
                     </div>
+
                     <div class="team">
-                        
                         {% if Proximo_Partido[3] == 'FC Barcelona' %}
-                        <img src="static/imagenes/escudos/BARCELONA.png" alt="Logo pequeño" class="small-logo2">
+                        <img src="{{ url_for('static', filename='imagenes/escudos/BARCELONA.png') }}" alt="Logo pequeño" class="small-logo2">
                         {% else %}
                         <img src="{{ url_for('static', filename='imagenes/escudos/' + Proximo_Partido[5]) }}" alt="Logo pequeño" class="small-logo2">
                         {% endif %}
-
-                        {%endfor%}
-
                         <span>Visitante</span>
                         <div class="team-logo"></div>
                     </div>
+                    {% endfor %}
 
-                    
                 </div>
             </div>
         </section>
@@ -120,17 +110,17 @@
         <div class="footer-content">
             <div class="footer-section">
                 <a href="https://www.nike.com" target="_blank">
-                    <img src="static/imagenes/patrocinadores/NIKE.png" alt="Logo Nike" class="small-logo4">
+                    <img src="{{ url_for('static', filename='imagenes/patrocinadores/NIKE.png') }}" alt="Logo Nike" class="small-logo4">
                 </a>
             </div>
             <div class="footer-section">
                 <a href="https://www.spotify.com" target="_blank">
-                    <img src="static/imagenes/patrocinadores/SPOTIFY.png" alt="Logo Spotify" class="small-logo5">
+                    <img src="{{ url_for('static', filename='imagenes/patrocinadores/SPOTIFY.png') }}" alt="Logo Spotify" class="small-logo5">
                 </a>
             </div>
             <div class="footer-section">
                 <a href="https://www.ambilight.com" target="_blank">
-                    <img src="static/imagenes/patrocinadores/AMBILIGHT.png" alt="Logo Ambilight" class="small-logo6">
+                    <img src="{{ url_for('static', filename='imagenes/patrocinadores/AMBILIGHT.png') }}" alt="Logo Ambilight" class="small-logo6">
                 </a>
             </div>
         </div>
