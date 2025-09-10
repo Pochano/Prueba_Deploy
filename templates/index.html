@@ -7,18 +7,12 @@
         <div class="top-bar-content">
             <span>ES</span>
             <div class="top-bar-links">
-
             {% if cookie_activa_R == False %}
-
-                <a href="{{ url_for('Login') }}">LOGIN</a>
-                <a href="{{ url_for('Register') }}">REGISTER</a>
-
+                <a href="{{ url_for('login') }}">LOGIN</a>
+                <a href="{{ url_for('register') }}">REGISTER</a>
             {% else %}
-
-                <a href="{{ url_for('Logout') }}">LOGOUT</a>
-
+                <a href="{{ url_for('logout') }}">LOGOUT</a>
             {% endif %}
-
             </div>
         </div>
     </div>
@@ -26,14 +20,12 @@
     <header class="header">
         <nav class="nav">
             <img src="{{ url_for('static', filename='imagenes/escudos/ESCUDO.png') }}" alt="Logo pequeño" class="small-logo">
-            <div class="logo">
-                FC BARCELONA
-            </div>
+            <div class="logo">FC BARCELONA</div>
             <div class="nav-links">
-                <a href="{{ url_for('Deportes') }}">Deportes</a>
-                <a href="{{ url_for('Instalaciones') }}">Instalaciones</a>
-                <a href="{{ url_for('Noticias') }}">Noticias</a>
-                <a href="{{ url_for('Directiva') }}">Directiva</a>
+                <a href="{{ url_for('deportes') }}">Deportes</a>
+                <a href="{{ url_for('instalaciones') }}">Instalaciones</a>
+                <a href="{{ url_for('noticias') }}">Noticias</a>
+                <a href="{{ url_for('directiva') }}">Directiva</a>
             </div>
         </nav>
     </header>
@@ -52,20 +44,17 @@
         <section class="news-section">
             <h2 class="section-title">Últimas Noticias</h2>
             <div class="news-grid">
-
                 {% for Noticia in Ultimas_Noticias_R %}
-
                 <article class="news-card">
-                    <a href="{{ url_for('Noticias') }}">
-                    <img src="{{ url_for('static', filename='imagenes/noticias/' + Noticia[3]) }}" alt="Noticia" class="news-img"></a>
+                    <a href="{{ url_for('noticias') }}">
+                        <img src="{{ url_for('static', filename='imagenes/noticias/' + Noticia[3]) }}" alt="Noticia" class="news-img">
+                    </a>
                     <div class="news-content">
                         <h3>{{ Noticia[0] }}</h3>
                         <p>{{ Noticia[1] }}</p>
                     </div>
                 </article>
-
                 {% endfor %}
-  
             </div>
         </section>
 
@@ -73,16 +62,10 @@
             <div class="matches-container">
                 <h2 class="section-title">Próximo Partido Primer Equipo</h2>
                 <div class="match-card">
-
                     {% for Proximo_Partido in Proximo_Partido_R %}
                     <div class="team">
-                        <div class="team-logo"></div>
                         <span>Local</span>
-                        {% if Proximo_Partido[2] == 'FC Barcelona' %}
-                        <img src="{{ url_for('static', filename='imagenes/escudos/BARCELONA.png') }}" alt="Logo pequeño" class="small-logo2">
-                        {% else %}
                         <img src="{{ url_for('static', filename='imagenes/escudos/' + Proximo_Partido[5]) }}" alt="Logo pequeño" class="small-logo2">
-                        {% endif %}
                     </div>
 
                     <div class="match-info">
@@ -91,16 +74,10 @@
                     </div>
 
                     <div class="team">
-                        {% if Proximo_Partido[3] == 'FC Barcelona' %}
-                        <img src="{{ url_for('static', filename='imagenes/escudos/BARCELONA.png') }}" alt="Logo pequeño" class="small-logo2">
-                        {% else %}
-                        <img src="{{ url_for('static', filename='imagenes/escudos/' + Proximo_Partido[5]) }}" alt="Logo pequeño" class="small-logo2">
-                        {% endif %}
                         <span>Visitante</span>
-                        <div class="team-logo"></div>
+                        <img src="{{ url_for('static', filename='imagenes/escudos/' + Proximo_Partido[5]) }}" alt="Logo pequeño" class="small-logo2">
                     </div>
                     {% endfor %}
-
                 </div>
             </div>
         </section>

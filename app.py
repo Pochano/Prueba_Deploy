@@ -6,15 +6,23 @@ app = Flask(__name__)
 @app.route('/')
 def Index():
     Ultimas_Noticias = [
-    ["Victoria en Champions", "El Barça gana 3-1 en la ida de cuartos", "2025-09-10", "champions_victoria.png"],
-    ["Lesión de jugador clave", "Messi sufre una lesión durante el entrenamiento", "2025-09-09", "lesion_messi.png"],
-    ["Nuevo fichaje confirmado", "El club ficha a un prometedor centrocampista", "2025-09-08", "nuevo_fichaje.png"]
+        ["Victoria en Champions", "El Barça gana 3-1 en la ida de cuartos", "2025-09-10", "champions_victoria.png"],
+        ["Lesión de jugador clave", "Messi sufre una lesión durante el entrenamiento", "2025-09-09", "lesion_messi.png"],
+        ["Nuevo fichaje confirmado", "El club ficha a un prometedor centrocampista", "2025-09-08", "nuevo_fichaje.png"]
     ]
 
     Proximo_Partido = [
-    ["FC Barcelona", "Real Madrid", "FC Barcelona", "Real Madrid", "campo_principal", "real_madrid.png", "20/09/2025 18:00"]
+        ["FC Barcelona", "Real Madrid", "FC Barcelona", "Real Madrid", "campo_principal", "real_madrid.png", "20/09/2025 18:00"]
     ]
-    return render_template("index.html", Ultimas_Noticias_R=Ultimas_Noticias, Proximo_Partido_R=Proximo_Partido)
+
+    cookie_activa_R = False  # Cambia a True si quieres mostrar LOGOUT
+
+    return render_template(
+        "index.html",
+        Ultimas_Noticias_R=Ultimas_Noticias,
+        Proximo_Partido_R=Proximo_Partido,
+        cookie_activa_R=cookie_activa_R
+    )
 
 @app.route('/Login')
 def login():
